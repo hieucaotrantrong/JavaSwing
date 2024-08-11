@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 /*
 |--------------------------------------
-Bài 74: Lập tringh gaio diện với JFame
+Bài 78: Lập trinh giao  diện với JFame
 Jfame có thể kế thừa lại lớp đã tạo
 |--------------------------------------
  */
@@ -29,10 +29,7 @@ public class MyWindown extends JFrame {
     }
 
     public static void main(String[] args) {
-        MyWindown myWindown = new MyWindown();
-        myWindown.showIt();
-        MyWindown myWindown2 = new MyWindown();
-        myWindown2.showIt("Windown2");
+
         MyWindown myWindown3 = new MyWindown();
         myWindown3.showIt("Windown3", 600, 400);
     }
