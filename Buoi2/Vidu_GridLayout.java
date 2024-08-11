@@ -1,6 +1,7 @@
 package Buoi2;
 
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
 import javax.swing.JButton;
 /*
@@ -11,26 +12,21 @@ import javax.swing.JButton;
  */
 import javax.swing.JFrame;
 
-public class Vidu_FlowLayout extends JFrame {
+public class Vidu_GridLayout extends JFrame {
      /**
       * 
       */
-     public Vidu_FlowLayout() {
-          this.setTitle("Vidu_FlowLayout");
+     public Vidu_GridLayout() {
+          this.setTitle("Vidu_GridLayout");
           this.setSize(600, 400);
           this.setLocationRelativeTo(null);
           /*
            * |------------------------------------
            * Set LayOut
-           * Ngoài ra có thể set layout theo nhiều
-           * cách khác
-           * |------------------------------------
-           * FlowLayout flowLayout =
-           * new FlowLayout(FlowLayout.CENTER);
            * |------------------------------------
            */
-          FlowLayout flowLayout = new FlowLayout();
-          this.setLayout(flowLayout); // Đúng cú pháp
+          GridLayout gridLayout = new GridLayout(4, 4);
+          this.setLayout(gridLayout);
           JButton jButton_1 = new JButton("1");
           JButton jButton_2 = new JButton("2");
           JButton jButton_3 = new JButton("3");
@@ -60,7 +56,7 @@ public class Vidu_FlowLayout extends JFrame {
      }
 
      public static void main(String[] args) {
-          new Vidu_FlowLayout();
+          new Vidu_GridLayout();
 
      }
 }
