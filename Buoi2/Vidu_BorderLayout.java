@@ -43,7 +43,7 @@ public class Vidu_BorderLayout extends JFrame {
         this.add(jButton_5, BorderLayout.CENTER);
         /*
          * |------------------------------------
-         * Đảm bảo chương tringh kết thúc
+         * Đảm bảo chương trình kết thúc
          * khi đóng cửa sổ
          * |------------------------------------
          */
