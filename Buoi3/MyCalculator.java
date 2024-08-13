@@ -15,6 +15,7 @@ trình java
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 public class MyCalculator extends JFrame {
     public MyCalculator() {
@@ -83,7 +84,7 @@ public class MyCalculator extends JFrame {
 
         /*
          * |-------------------------------------
-         * 
+         * SetLAyout
          * |-------------------------------------
          */
         this.setLayout(new BorderLayout());
@@ -98,6 +99,19 @@ public class MyCalculator extends JFrame {
     }
 
     public static void main(String[] args) {
-        new MyCalculator();
+        /*
+         * |-------------------------------------
+         * Hiển thị giao diện theo nhiều hệ điều
+         * hành khác nhau
+         * |-------------------------------------
+         */
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            new MyCalculator();
+        } catch (Exception e) {
+            e.printStackTrace();
+            // TODO: handle exception
+        }
+
     }
 }
