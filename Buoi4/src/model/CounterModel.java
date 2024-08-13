@@ -1,5 +1,11 @@
 package model;
 
+/*
+ |--------------------------------------
+ Bài 81:Áp dụng mô hình MVC trong xây dựng
+ chương trình và các sử lí sự kiện
+  |--------------------------------------
+ */
 public class CounterModel {
     private int value;
 
@@ -21,5 +27,9 @@ public class CounterModel {
 
     public void decrement() {
         this.value--;
+    }
+
+    public void reset() {
+        this.value = 0;
     }
 }
