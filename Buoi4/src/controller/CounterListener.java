@@ -20,6 +20,8 @@ public class CounterListener implements ActionListener {
             this.counterView.increment();
         } else if (string.equals("Down")) {
             this.counterView.decrement();
+        } else if (string.equals("Reset")) {
+            this.counterView.reset();
         }
     }
 

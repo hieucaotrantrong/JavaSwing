@@ -22,6 +22,7 @@ public class CounterView extends JFrame {
     private JButton jButton_up;
     private JButton jButton_down;
     private JLabel jLabel_value;
+    private JButton jButton_reset;
 
     /*
      * |--------------------------------------
@@ -55,6 +56,8 @@ public class CounterView extends JFrame {
         jButton_up.addActionListener(actionListener);
         jButton_down = new JButton("Down");
         jButton_down.addActionListener(actionListener);
+        jButton_reset = new JButton("Reset");
+        jButton_reset.addActionListener(actionListener);
         jLabel_value = new JLabel(this.counterModel.getValue() + "", JLabel.CENTER);
         /*
          * |--------------------------------------
@@ -66,6 +69,7 @@ public class CounterView extends JFrame {
         jPanel.add(jButton_up, BorderLayout.WEST);
         jPanel.add(jLabel_value, BorderLayout.CENTER);
         jPanel.add(jButton_down, BorderLayout.EAST);
+        jPanel.add(jButton_reset, BorderLayout.SOUTH);
         /*
          * |--------------------------------------
          * Set layout jpanl
@@ -83,6 +87,11 @@ public class CounterView extends JFrame {
 
     public void decrement() {
         this.counterModel.decrement();
+        this.jLabel_value.setText(this.counterModel.getValue() + "");
+    }
+
+    public void reset() {
+        this.counterModel.reset();
         this.jLabel_value.setText(this.counterModel.getValue() + "");
     }
 }
