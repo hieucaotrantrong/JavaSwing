@@ -11,8 +11,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import controller.CounterListener;
 import model.CounterModel;
 import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
 
 public class CounterView extends JFrame {
     private CounterModel counterModel;
@@ -38,17 +41,48 @@ public class CounterView extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         /*
          * |--------------------------------------
-         * Thêm thành phần cho Button
+         * Lắng nghe sự kiện từ người dùng
          * |--------------------------------------
          */
-        jButton_up = new JButton("UP");
-        jButton_down = new JButton("Down");
-        jLabel_value = new JLabel(this.counterModel.getValue() + "");
+        ActionListener actionListener = new CounterListener(this);
 
+        /*
+         * |--------------------------------------
+         * Sử lí sự kiện cho nút
+         * -----------------------------------
+         */
+        jButton_up = new JButton("UP");
+        jButton_up.addActionListener(actionListener);
+        jButton_down = new JButton("Down");
+        jButton_down.addActionListener(actionListener);
+        jLabel_value = new JLabel(this.counterModel.getValue() + "", JLabel.CENTER);
+        /*
+         * |--------------------------------------
+         * 
+         * |--------------------------------------
+         */
         JPanel jPanel = new JPanel();
         jPanel.setLayout(new BorderLayout());
         jPanel.add(jButton_up, BorderLayout.WEST);
         jPanel.add(jLabel_value, BorderLayout.CENTER);
         jPanel.add(jButton_down, BorderLayout.EAST);
+        /*
+         * |--------------------------------------
+         * Set layout jpanl
+         * |--------------------------------------
+         */
+        this.setLayout(new BorderLayout());
+        this.add(jPanel, BorderLayout.CENTER);
+
+    }
+
+    public void increment() {
+        this.counterModel.increment();
+        this.jLabel_value.setText(this.counterModel.getValue() + "");
+    }
+
+    public void decrement() {
+        this.counterModel.decrement();
+        this.jLabel_value.setText(this.counterModel.getValue() + "");
     }
 }

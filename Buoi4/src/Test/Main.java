@@ -7,6 +7,7 @@ package Test;
   |--------------------------------------
  */
 import model.CounterModel;
+import view.CounterView;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,5 +16,6 @@ public class Main {
         counterModel.increment();
         counterModel.increment();
         System.out.println();
+        CounterView counterView = new CounterView();
     }
 }
