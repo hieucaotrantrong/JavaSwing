@@ -38,6 +38,7 @@ public class LastButtonView extends JFrame {
         this.setTitle("Last Button");
         this.setSize(300, 300);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
         JPanel jPanel_Center = new JPanel();
         jPanel_Center.setLayout(new GridLayout(2, 2));
         /*
@@ -84,7 +85,7 @@ public class LastButtonView extends JFrame {
          * |---------------------------------------
          */
         JPanel jPanel_footer = new JPanel();
-        JLabel jLabel = new JLabel("-------");
+        jLabel = new JLabel("-------");
         jLabel.setFont(font);
         jPanel_footer.add(jLabel);
         this.setLayout(new BorderLayout());
