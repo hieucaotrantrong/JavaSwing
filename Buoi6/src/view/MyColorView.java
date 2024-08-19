@@ -28,7 +28,7 @@ public class MyColorView extends JFrame {
         this.init();
     }
 
-    private void init() {
+    public void init() {
         this.setTitle("MyColor");
         this.setSize(600, 600);
         this.setLocationRelativeTo(null);
@@ -103,7 +103,7 @@ public class MyColorView extends JFrame {
         jPanel.add(jButton_background_green);
         this.setLayout(new BorderLayout());
         this.add(jLabel, BorderLayout.NORTH);
-        this.add(jLabel, BorderLayout.CENTER);
+        this.add(jPanel, BorderLayout.CENTER);
         /*
          * |--------------------------------------
          * Hiển thị giao diện

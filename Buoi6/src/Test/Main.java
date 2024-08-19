@@ -1,8 +1,8 @@
-package Test;
+package test;
 
 import view.MyColorView;
 
-public class Main {
+public class main {
     public static void main(String[] args) {
         new MyColorView();
     }
