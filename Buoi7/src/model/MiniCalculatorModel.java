@@ -3,7 +3,7 @@ package model;
 /*
  |---------------------------------------
  Bài 84:Cách sử dụng Jtextfield để hiển thị
- và nhập dữ liueej văn bản
+ và nhập dữ liệu  văn bản
   |---------------------------------------
  */
 public class MiniCalculatorModel {
@@ -52,6 +52,14 @@ public class MiniCalculatorModel {
     }
 
     public void devide() {
-        this.answer = this.firstValue * this.secondValue;
+        this.answer = this.firstValue / this.secondValue;
+    }
+
+    public void power() {
+        this.answer = Math.pow(this.firstValue, this.secondValue);
+    }
+
+    public void mod() {
+        this.answer = this.firstValue % this.secondValue;
     }
 }
