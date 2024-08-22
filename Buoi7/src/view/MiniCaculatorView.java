@@ -16,14 +16,16 @@ import controller.MiniCaculatorListener;
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
-
 import model.MiniCalculatorModel;
 
 public class MiniCaculatorView extends JFrame {
     private MiniCalculatorModel miniCalculatorModel;
+    private JTextField jtextfield_firstValue;
+    private JTextField jtextfield_secondValue;
+    private JTextField jtextfield_answer;
 
     public MiniCaculatorView() {
-        this.miniCalculatorModel = miniCalculatorModel;
+        this.miniCalculatorModel = new MiniCalculatorModel();
         this.init();
     }
 
@@ -46,11 +48,11 @@ public class MiniCaculatorView extends JFrame {
         /*
          * |-----------------------------------
          */
-        JTextField jtextfield_firstValue = new JTextField(50);
+        jtextfield_firstValue = new JTextField(50);
         jtextfield_firstValue.setFont(font);
-        JTextField jtextfield_secondValue = new JTextField(50);
+        jtextfield_secondValue = new JTextField(50);
         jtextfield_secondValue.setFont(font);
-        JTextField jtextfield_answer = new JTextField(50);
+        jtextfield_answer = new JTextField(50);
         jtextfield_answer.setFont(font);
         JPanel jPanelIO = new JPanel();
         jPanelIO.setLayout(new GridLayout(3, 2, 10, 10));
@@ -122,4 +124,64 @@ public class MiniCaculatorView extends JFrame {
 
     }
 
+    /*
+     * |-----------------------------------
+     */
+    /**
+     * 
+     */
+    public void plus() {
+        double firstValue = Double.valueOf(jtextfield_firstValue.getText());
+        double secondValue = Double.valueOf(jtextfield_secondValue.getText());
+        this.miniCalculatorModel.setFirstValue(firstValue);
+        this.miniCalculatorModel.setSecondValue(secondValue);
+        this.miniCalculatorModel.plus();
+        this.jtextfield_answer.setText(this.miniCalculatorModel.getAnswer() + "");
+    }
+
+    public void minus() {
+        double firstValue = Double.valueOf(jtextfield_firstValue.getText());
+        double secondValue = Double.valueOf(jtextfield_secondValue.getText());
+        this.miniCalculatorModel.setFirstValue(firstValue);
+        this.miniCalculatorModel.setSecondValue(secondValue);
+        this.miniCalculatorModel.minus();
+        this.jtextfield_answer.setText(this.miniCalculatorModel.getAnswer() + "");
+    }
+
+    public void muitiply() {
+        double firstValue = Double.valueOf(jtextfield_firstValue.getText());
+        double secondValue = Double.valueOf(jtextfield_secondValue.getText());
+        this.miniCalculatorModel.setFirstValue(firstValue);
+        this.miniCalculatorModel.setSecondValue(secondValue);
+        this.miniCalculatorModel.muitiply();
+        this.jtextfield_answer.setText(this.miniCalculatorModel.getAnswer() + "");
+    }
+
+    public void devide() {
+        double firstValue = Double.valueOf(jtextfield_firstValue.getText());
+        double secondValue = Double.valueOf(jtextfield_secondValue.getText());
+        this.miniCalculatorModel.setFirstValue(firstValue);
+        this.miniCalculatorModel.setSecondValue(secondValue);
+        this.miniCalculatorModel.devide();
+        this.jtextfield_answer.setText(this.miniCalculatorModel.getAnswer() + "");
+    }
+
+    public void power() {
+        double firstValue = Double.valueOf(jtextfield_firstValue.getText());
+        double secondValue = Double.valueOf(jtextfield_secondValue.getText());
+        this.miniCalculatorModel.setFirstValue(firstValue);
+        this.miniCalculatorModel.setSecondValue(secondValue);
+        this.miniCalculatorModel.power();
+        this.jtextfield_answer.setText(this.miniCalculatorModel.getAnswer() + "");
+
+    }
+
+    public void mod() {
+        double firstValue = Double.valueOf(jtextfield_firstValue.getText());
+        double secondValue = Double.valueOf(jtextfield_secondValue.getText());
+        this.miniCalculatorModel.setFirstValue(firstValue);
+        this.miniCalculatorModel.setSecondValue(secondValue);
+        this.miniCalculatorModel.mod();
+        this.jtextfield_answer.setText(this.miniCalculatorModel.getAnswer() + "");
+    }
 }

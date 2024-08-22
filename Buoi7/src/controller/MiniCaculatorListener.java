@@ -14,7 +14,20 @@ public class MiniCaculatorListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        String button = e.getActionCommand();
+        if (button.equals("+")) {
+            this.miniCaculatorView.plus();
+        } else if (button.equals("-")) {
+            this.miniCaculatorView.minus();
+        } else if (button.equals("*")) {
+            this.miniCaculatorView.muitiply();
+        } else if (button.equals("/")) {
+            this.miniCaculatorView.devide();
+        } else if (button.equals("^")) {
+            this.miniCaculatorView.power();
+        } else if (button.equals("%")) {
+            this.miniCaculatorView.mod();
+        }
     }
 
 }
