@@ -113,7 +113,6 @@ public class MiniCaculatorView extends JFrame {
         jPanelButtons.add(jButton_mod);
         jPanelButtons.add(jButton_multiply);
         jPanelButtons.add(jButton_pow);
-
         /*
          * |-----------------------------------
          */
