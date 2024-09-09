@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 package model;
 
 /*
  |-------------------------------------------
  Bài 85: cách sử dụng jtextArea để hiển thị
+=======
+package Buoi8.model;
+
+/*
+ |-------------------------------------------
+ Bài 85: cách sử dụng jtextArea để huển thị
+>>>>>>> e33f062a91ee8de8e4867850598fdb9aee9d922a
  và nhập dữ liệu văn bản nhiều dòng
   |-------------------------------------------
  */
@@ -47,7 +55,11 @@ public class TimKiemModel {
         int dem = 0;
         int viTri = 0;
         while (true) {
+<<<<<<< HEAD
             int i = this.vanBan.indexOf(this.tuKhoa, viTri);
+=======
+            int i = this.vanBan.indexOf(this.tuKhoa, 0);
+>>>>>>> e33f062a91ee8de8e4867850598fdb9aee9d922a
             if (i == -1) {
                 /*
                  * |---------------------------------------
@@ -60,7 +72,11 @@ public class TimKiemModel {
                 viTri = i + 1;
             }
         }
+<<<<<<< HEAD
         this.ketQua = "Ket qua: Co :" + dem + " " + this.tuKhoa;
         System.out.println(ketQua);
+=======
+        this.ketQua = "Ket qua: Co" + dem + this.tuKhoa;
+>>>>>>> e33f062a91ee8de8e4867850598fdb9aee9d922a
     }
 }
