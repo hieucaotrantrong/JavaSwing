@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -48,6 +49,12 @@ public class TimKiemView extends JFrame {
         jLabel_vanBan.setFont(font);
         jTextArea_vanBan = new JTextArea(10, 50);
         jTextArea_vanBan.setFont(font);
+        /*
+         * |-------------------------------------------
+         * JscrollPane
+         */
+        JScrollPane jScrollPane = new JScrollPane(jTextArea_vanBan, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+                JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
         /*
          * |-------------------------------------------
@@ -92,7 +99,7 @@ public class TimKiemView extends JFrame {
          */
         this.setLayout(new BorderLayout());
         this.add(jLabel_vanBan, BorderLayout.NORTH);
-        this.add(jTextArea_vanBan, BorderLayout.CENTER);
+        this.add(jScrollPane, BorderLayout.CENTER);
         this.add(jPanel_footer, BorderLayout.SOUTH);
 
         this.setVisible(true);
