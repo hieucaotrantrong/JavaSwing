@@ -1,11 +1,7 @@
-<<<<<<< HEAD
+
 package view;
 
 import javax.swing.JButton;
-=======
-package Buoi8.view;
-
->>>>>>> e33f062a91ee8de8e4867850598fdb9aee9d922a
 /*
  |-------------------------------------------
  Bài 85: cách sử dụng jtextArea để hiển thị
@@ -15,7 +11,6 @@ package Buoi8.view;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-<<<<<<< HEAD
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -29,26 +24,19 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import model.TimKiemModel;
-=======
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.HeadlessException;
-import Buoi8.model.TimKiemModel;
->>>>>>> e33f062a91ee8de8e4867850598fdb9aee9d922a
 
 public class TimKiemView extends JFrame {
     private TimKiemModel timKiemModel;
     private JTextArea jTextArea_vanBan;
     private JTextField jTextField_tuKhoa;
-<<<<<<< HEAD
     private JLabel jLabel_ketQua;
     private Container jPanel_center;
-=======
->>>>>>> e33f062a91ee8de8e4867850598fdb9aee9d922a
 
     public TimKiemView() throws HeadlessException {
         this.timKiemModel = new TimKiemModel();
@@ -66,7 +54,6 @@ public class TimKiemView extends JFrame {
         Font font = new Font("Arial", Font.BOLD, 40);
         JLabel jLabel_vanBan = new JLabel("Van Ban");
         jLabel_vanBan.setFont(font);
-<<<<<<< HEAD
         jTextArea_vanBan = new JTextArea(10, 50);
         jTextArea_vanBan.setFont(font);
         /*
@@ -82,20 +69,12 @@ public class TimKiemView extends JFrame {
          */
 
         TimkiemListner timkiemListner = new TimkiemListner(this);
-=======
-        jTextArea_vanBan = new JTextArea(100, 100);
-        jTextArea_vanBan.setFont(font);
-        /*
-         * |-------------------------------------------
-         */
->>>>>>> e33f062a91ee8de8e4867850598fdb9aee9d922a
         JLabel jLabel_tuKhoa = new JLabel(" Tu Khoa");
         jLabel_tuKhoa.setFont(font);
         jTextField_tuKhoa = new JTextField();
         jTextField_tuKhoa.setFont(font);
         /*
          * |-------------------------------------------
-<<<<<<< HEAD
          * Footer
          */
         JButton jButton_thongke = new JButton("Thong ke");
@@ -122,20 +101,11 @@ public class TimKiemView extends JFrame {
         jPanel_footer.add(jButton_thongke);
         jPanel_footer.add(jLabel_ketQua);
 
-=======
-         */
-        JPanel jPanel_center = new JPanel();
-        jPanel_center.setLayout(new GridLayout(4, 1));
-        jPanel_center.add(jLabel_vanBan);
-        jPanel_center.add(jTextArea_vanBan);
-        jPanel_center.add(jLabel_tuKhoa);
-        jPanel_center.add(jTextField_tuKhoa);
->>>>>>> e33f062a91ee8de8e4867850598fdb9aee9d922a
         /*
          * |-------------------------------------------
          */
         this.setLayout(new BorderLayout());
-<<<<<<< HEAD
+
         this.add(jLabel_vanBan, BorderLayout.NORTH);
         this.add(jScrollPane, BorderLayout.CENTER);
         this.add(jPanel_footer, BorderLayout.SOUTH);
@@ -148,11 +118,7 @@ public class TimKiemView extends JFrame {
         this.timKiemModel.setTuKhoa(jTextField_tuKhoa.getText());
         this.timKiemModel.timKiem();
         this.jLabel_ketQua.setText(this.timKiemModel.getKetQua());
-    }
-=======
         this.add(jPanel_center, BorderLayout.CENTER);
         this.setVisible(true);
     }
-
->>>>>>> e33f062a91ee8de8e4867850598fdb9aee9d922a
 }
