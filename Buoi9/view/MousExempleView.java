@@ -2,6 +2,7 @@ package Buoi9.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 /*
 |---------------------------------------
@@ -14,10 +15,21 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Buoi9.controller.MouseExempleController;
 import Buoi9.model.MouseExempleModel;
 
 public class MousExempleView extends JFrame {
     private MouseExempleModel model;
+    private JLabel jLabel_position;
+    private JLabel jLabel_x;
+    private JLabel jLabel_y;
+    private JLabel jLabel_count;
+    private JLabel jLabel_count_value;
+    private JLabel jLabel_empty_1;
+    private JLabel jLabel_empty_2;
+    private JLabel jLabel_check_in;
+    private JLabel jLabel_check_in_value;
+    private JPanel jPanel_mouse;
 
     public MousExempleView() throws HeadlessException {
         this.model = new MouseExempleModel();
@@ -26,6 +38,7 @@ public class MousExempleView extends JFrame {
 
     private void init() {
         this.setTitle("MOUSE EXEMPLE");
+        this.setSize(600, 500);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         /*
@@ -33,8 +46,12 @@ public class MousExempleView extends JFrame {
          * jPanel_mouse
          * |----------------------------------------
          */
-        JPanel jPanel_mouse = new JPanel();
+        MouseExempleController mouseExempleController = new MouseExempleController(this);
+        jPanel_mouse = new JPanel();
         jPanel_mouse.setBackground(Color.BLUE);
+        jPanel_mouse.addMouseListener(mouseExempleController);
+        jPanel_mouse.addMouseMotionListener(mouseExempleController);
+
         /*
          * |----------------------------------------
          * Jpanel info
@@ -47,33 +64,41 @@ public class MousExempleView extends JFrame {
          * jLabel_position
          * |----------------------------------------
          */
-        JLabel jLabel_position = new JLabel("Position");
-        JLabel jLabel_x = new JLabel("x= ");
-        JLabel jLabel_y = new JLabel("y= ");
+        Font font = new Font("Arial", Font.BOLD, 40);
+        jLabel_position = new JLabel("Position");
+        jLabel_position.setFont(font);
+        jLabel_x = new JLabel("x= ");
+        jLabel_x.setFont(font);
+        jLabel_y = new JLabel("y= ");
+        jLabel_y.setFont(font);
         /*
          * |----------------------------------------
          * jLabel_count
          * |----------------------------------------
          */
-        JLabel jLabel_count = new JLabel("Number of clicks: ");
-        JLabel jLabel_count_value = new JLabel("n");
+        jLabel_count = new JLabel("Number of clicks: ");
+        jLabel_count.setFont(font);
+        jLabel_count_value = new JLabel("n");
+        jLabel_count_value.setFont(font);
         /*
          * |----------------------------------------
          * jLabel_empty
          * |----------------------------------------
          */
-        JLabel jLabel_empty_1 = new JLabel();
-        JLabel jLabel_empty_2 = new JLabel();
+        jLabel_empty_1 = new JLabel();
+        jLabel_empty_2 = new JLabel();
         /*
          * |----------------------------------------
          * jLabel_checkin
          * |----------------------------------------
          */
-        JLabel jLabel_check_in = new JLabel("Mouse is in component");
-        JLabel jLabel_check_in_value = new JLabel("no");
+        jLabel_check_in = new JLabel("Mouse is in component");
+        jLabel_check_in.setFont(font);
+        jLabel_check_in_value = new JLabel("no");
+        jLabel_check_in_value.setFont(font);
         /*
          * |----------------------------------------
-         * Add Jpan
+         * Add Jpanel
          * |----------------------------------------
          */
         jPanel_info.add(jLabel_position);
@@ -92,6 +117,31 @@ public class MousExempleView extends JFrame {
          * |----------------------------------------
          */
         this.setLayout(new BorderLayout());
+        this.add(jPanel_mouse, BorderLayout.CENTER);
+        this.add(jPanel_info, BorderLayout.SOUTH);
         this.setVisible(true);
+    }
+
+    public void click() {
+        this.model.addClick();
+        this.jLabel_count_value.setText(this.model.getCount() + "");
+
+    }
+
+    public void enter() {
+        this.model.enter();
+        this.jLabel_check_in_value.setText(this.model.getCheckIn());
+    }
+
+    public void exit() {
+        this.model.exit();
+        this.jLabel_check_in_value.setText(this.model.getCheckIn());
+    }
+
+    public void update(int x, int y) {
+        this.model.setX(x);
+        this.model.setY(y);
+        this.jLabel_x.setText(this.model.getX() + "");
+        this.jLabel_y.setText(this.model.getX() + "");
     }
 }
