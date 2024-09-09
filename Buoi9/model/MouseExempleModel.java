@@ -1,5 +1,10 @@
 package Buoi9.model;
 
+/*
+|---------------------------------------
+ Bài 87:Xử lí các sự kiện của chuột máy tính
+|---------------------------------------
+ */
 public class MouseExempleModel {
     private int x, y;
     private int count;
