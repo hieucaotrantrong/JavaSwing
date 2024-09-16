@@ -15,13 +15,10 @@ public class MenuExempleController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String button = e.getActionCommand();
-        if (button.equals("Open")) {
-            this.menuExempleView.SetTextJLable("Bạn đã click JmenuItem OPEN");
-        } else if (button.equals("Exit")) {
-            // this.menuExempleView.SetTextJLable("Bạn đã click JmenuItem Exit");
+        if (button.equals("Exit")) {
             System.exit(0);
-        } else if (button.equals("Welcome")) {
-            this.menuExempleView.SetTextJLable("Bạn đã click Jmenu Ưelcome");
+        } else {
+            this.menuExempleView.SetTextJLable("Ban da Click " + button);
         }
     }
 

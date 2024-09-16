@@ -1,5 +1,6 @@
 package view;
 
+import javax.swing.JButton;
 /*
 |--------------------------------------
 Cách thêm thanh Meni và xử lí sự kiện
@@ -12,11 +13,13 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JToolBar;
 
 import controller.MenuExempleController;
 
 import java.awt.BorderLayout;
-import java.awt.Font;;
+import java.awt.Font;
+import java.awt.event.KeyEvent;;
 
 public class MenuExempleView extends JFrame {
     private JLabel jLabel;
@@ -26,6 +29,7 @@ public class MenuExempleView extends JFrame {
         this.setSize(500, 500);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        this.setLayout(new BorderLayout());
         /*
          * |------------------------------
          * Tạo thanh menu
@@ -45,9 +49,11 @@ public class MenuExempleView extends JFrame {
          * Tạo các menu con
          * |------------------------------------
          */
-        JMenuItem jMenuItem_open = new JMenuItem("Open");
+        JMenuItem jMenuItem_new = new JMenuItem("New", KeyEvent.VK_N);
+        jMenuItem_new.addActionListener(menuExempleController);
+        JMenuItem jMenuItem_open = new JMenuItem("Open", KeyEvent.VK_O);
         jMenuItem_open.addActionListener(menuExempleController);
-        JMenuItem jMenuItem_exit = new JMenuItem("Exit");
+        JMenuItem jMenuItem_exit = new JMenuItem("Exit", KeyEvent.VK_X);
         jMenuItem_exit.addActionListener(menuExempleController);
         jMenu_file.add(jMenuItem_open);
         jMenu_file.addSeparator();
@@ -64,6 +70,34 @@ public class MenuExempleView extends JFrame {
         jMenuBar.add(jMenu_help);
         /*
          * |---------------------------------
+         * Tạo Toolbar (Thanh công cụ)
+         */
+        JToolBar jToolBar = new JToolBar();
+        JButton jButton_Undo = new JButton("Undo");
+        jButton_Undo.addActionListener(menuExempleController);
+        JButton jButton_Redo = new JButton("Redo");
+        jButton_Redo.addActionListener(menuExempleController);
+        JButton jButton_Copy = new JButton("Copy");
+        jButton_Copy.addActionListener(menuExempleController);
+        JButton jButton_Cut = new JButton("Cut");
+        jButton_Cut.addActionListener(menuExempleController);
+        JButton jButton_Paste = new JButton("Paste");
+        jButton_Paste.addActionListener(menuExempleController);
+        /*
+         * |---------------------------------
+         */
+        jToolBar.add(jButton_Undo);
+        jToolBar.add(jButton_Redo);
+        jToolBar.add(jButton_Cut);
+        jToolBar.add(jButton_Copy);
+        jToolBar.add(jButton_Paste);
+        /*
+         * |---------------------------------
+         */
+        this.add(jToolBar, BorderLayout.NORTH);
+
+        /*
+         * |---------------------------------
          * Thêm thanh menu vào chương trình
          * |---------------------------------
          */
@@ -71,7 +105,6 @@ public class MenuExempleView extends JFrame {
         Font font = new Font("Arial", Font.BOLD, 50);
         jLabel = new JLabel();
 
-        this.setLayout(new BorderLayout());
         this.add(jLabel, BorderLayout.CENTER);
         this.setVisible(true);
     }
